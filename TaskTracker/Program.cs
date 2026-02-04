@@ -30,9 +30,7 @@ do
 
 void AboutMeInformation()
 {
-    Console.WriteLine("Melissa Hegney");
-    Console.WriteLine("Merlissa09");
-    Console.WriteLine(DateTime.IsLeapYear(1998));
-    Console.WriteLine(DateTime.Now);
+    Console.WriteLine("My name is Melissa Hegney");
+    Console.WriteLine("My GitHub name is Merlissa09");
     Console.WriteLine();
 }
