@@ -1,5 +1,6 @@
 var shouldContinue = true;
-do {
+do
+{
     Console.WriteLine("Welcome to TaskTracker!");
     Console.WriteLine("1. List Tasks");
     Console.WriteLine("2. About");
@@ -8,18 +9,30 @@ do {
 
     int.TryParse(Console.ReadLine(), null, out int input);
 
-    if (input == 2)
-    {
-        Console.WriteLine("Melissa Hegney");
-        Console.WriteLine("Merlissa09");
-        Console.WriteLine(DateTime.IsLeapYear(1998));
-        Console.WriteLine(DateTime.Now);
-    }
 
-    if(input == 3)
+    switch (input)
     {
-        shouldContinue = false;
-    }
+        case 1:
+            // list the tasks
+            break;
+        case 2:
 
-    // make it so that the program does't close after an action is done
+            break;
+        case 3:
+            shouldContinue = false;
+            break;
+        default:
+            shouldContinue = false;
+            break;
+    }
+    // make it so that the pro
 } while (shouldContinue);
+
+void AboutMeInformation()
+{
+    Console.WriteLine("Melissa Hegney");
+    Console.WriteLine("Merlissa09");
+    Console.WriteLine(DateTime.IsLeapYear(1998));
+    Console.WriteLine(DateTime.Now);
+    Console.WriteLine();
+}
