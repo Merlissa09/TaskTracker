@@ -14,6 +14,8 @@ do
     {
         case 1:
             // list the tasks
+            // TODO: add a project reference by turning the Domain into a Class Library
+            TaskItem taskOne = new();
             break;
         case 2:
 
