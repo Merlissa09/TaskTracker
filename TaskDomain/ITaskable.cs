@@ -8,7 +8,7 @@ public interface ITaskable
     /// <summary>
     /// Retrieves the title of a task
     /// </summary>
-    /// <returns>The title of the task
+    /// <returns>The title of the task</returns>
     string GetTitle();
     /// <summary>
     /// Retrieves the task description
