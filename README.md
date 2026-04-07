@@ -63,15 +63,3 @@ All of these commands can be typed into your terminal. Make sure your terminal i
 ## License
 
 See the [LICENSE](LICENSE) file for details.
-
-
-
-
-
-type these commands into your terminal
-this command will create a branch with the given name
-git branch insert-name-of-branch
-this command will checkout the branch so you can work on it
-git checkout insert-name-of-branch
-this command will show you all your local branches
-git branch

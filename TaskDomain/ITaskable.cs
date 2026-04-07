@@ -1,7 +1,7 @@
+namespace TaskDomain;
+
 /// <summary>
-/// This interface is designed to provide a shared contract for all task items.
-/// This allows us to work with any kind of task item's shared functionality.
-/// Distinct functionality will need to be handled by the implementing TaskItem itself.
+/// Defines the shared contract for task items.
 /// </summary>
 public interface ITaskable
 {
