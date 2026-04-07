@@ -49,6 +49,17 @@ The application will start and display the local URL (typically `http://localhos
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+
+### Basic Git Commands
+
+All of these commands can be typed into your terminal. Make sure your terminal is scoped to the correct project
+- `git branch insert-name-of-branch` - this command will create a branch with the given name
+
+- `git checkout insert-name-of-branch` - this command will checkout the branch so you can work on it
+
+- `git branch` - this command will show you all your local branches
+
+
 ## License
 
 See the [LICENSE](LICENSE) file for details.
