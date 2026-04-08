@@ -1,5 +1,3 @@
-fake readme
-
 # TaskTracker
 
 A task management application built with ASP.NET Core.
@@ -23,6 +21,7 @@ TaskTracker is a web-based application for managing and tracking tasks efficient
    ```
 
 2. Restore dependencies:
+
    ```bash
    dotnet restore
    ```
@@ -49,15 +48,19 @@ The application will start and display the local URL (typically `http://localhos
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-
 ### Basic Git Commands
 
 All of these commands can be typed into your terminal. Make sure your terminal is scoped to the correct project
+
 - `git branch insert-name-of-branch` - this command will create a branch with the given name
 
 - `git checkout insert-name-of-branch` - this command will checkout the branch so you can work on it
 
 - `git branch` - this command will show you all your local branches
+
+- `git fetch` - a command used to download new data (commits, files, and branches) from a remote repository into your local repository without integrating those changes into your current working file
+
+- `git pull` - used to download content from a remote repository and immediately update the local repository to match that content. It is essentially a combination of two separate commands: git fetch followed by git merge
 
 
 ## License
