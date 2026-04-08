@@ -60,7 +60,7 @@ All of these commands can be typed into your terminal. Make sure your terminal i
 
 - `git fetch` - a command used to download new data (commits, files, and branches) from a remote repository into your local repository without integrating those changes into your current working file
 
-- `git pull` - used to download content from a remote repository and immediately update the local repository to match that content. It is essentially a combination of two separate commands: git fetch followed by git merge
+- `git pull` - used to download content from a remote repository and immediately update the local repository to match that content. It is essentially a combination of two separate commands: `git fetch` followed by `git merge`
 
 
 ## License
