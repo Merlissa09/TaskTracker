@@ -77,4 +77,36 @@ public class TaskItemListService
             Console.WriteLine($"{item.Id}: {item.Title}");
         }
     }
+
+    public void GetAllTasks()
+    {
+        //returns the full internal list of task items
+        foreach (var item in taskitems)
+        {
+            Console.WriteLine($"{item.ID}, {item.Title}");
+        }
+    }
+    public void GetPendingTasks()
+    {
+        //returns only tasks where isComplete() is false, 
+        //using a loop or stream
+        foreach (var item in taskItems)
+        {
+            if (!item.IsComplete())
+            {
+                Console.WriteLine($"{item.Id}: {item.Title}");
+            }
+        }
+    }
+    public void GetCompletedTasks()
+    {
+        //returns only tasks where isComplete() is true, using a loop or stream
+        foreach (var item in taskItems)
+        {
+            if (item.IsComplete())
+            {
+                Console.WriteLine($"{item.Id}: {item.Title}");
+            }
+        }
+    }
 }
