@@ -10,7 +10,7 @@ public class TaskItem : ITaskable
     public TaskItem(string title)
     {
         Id = ++_totalCount;
-        Title = title;
+        _title = title;
     }
 
     // static property
@@ -25,30 +25,30 @@ public class TaskItem : ITaskable
     // Instance properties
     // Instance properties belong to the object
     public int Id { get; }
-    private string Title = string.Empty;
-    private string Description = string.Empty;
-    private bool Complete = false;
+    private readonly string _title = string.Empty;
+    private string _description = string.Empty;
+    private bool _complete = false;
 
     // TODO: Consider achievement system
 
     public string GetTitle()
     {
-        return Title;
+        return _title;
     }
 
     public string GetDescription()
     {
-        return Description;
+        return _description;
     }
 
     public bool IsComplete()
     {
-        return Complete;
+        return _complete;
     }
 
     public bool MarkComplete()
     {
-        Complete = true;
+        _complete = true;
         return true;
     }
 
