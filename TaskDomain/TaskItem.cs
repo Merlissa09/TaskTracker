@@ -48,7 +48,8 @@ public class TaskItem : ITaskable
 
     public bool MarkComplete()
     {
-        return Complete = true;
+        Complete = true;
+        return true;
     }
 
 }
