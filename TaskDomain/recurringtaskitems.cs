@@ -1,5 +1,5 @@
 
-using TaskDomain;
+namespace TaskDomain;
 //This class represents a recurring task so different from the actual interface
 public class RecurringTask : ITaskable
 {
