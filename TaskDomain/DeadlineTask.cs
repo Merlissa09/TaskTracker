@@ -1,5 +1,11 @@
 namespace TaskDomain;
 
+/// <summary>
+/// DeadlineTask represents a task that includes a due date.
+/// Unlike TaskItem, it stores additional deadline information
+/// while still supporting the shared task behavior defined in ITaskable.
+/// </summary>
+
 public class DeadlineTask : ITaskable
 {
     private string _title;
