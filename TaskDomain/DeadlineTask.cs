@@ -5,9 +5,9 @@ public class DeadlineTask : ITaskable
     private string _title;
     private string _description;
     private bool _complete;
-    private DateTime _dueDate;
+    private string _dueDate;
 
-    public DeadlineTask(string title, string description, DateTime dueDate)
+    public DeadlineTask(string title, string description, string dueDate)
     {
         _title = title;
         _description = description;
@@ -40,7 +40,7 @@ public class DeadlineTask : ITaskable
         return true;
     }
 
-    public DateTime GetDueDate()
+    public string GetDueDate()
     {
         return _dueDate;
     }
