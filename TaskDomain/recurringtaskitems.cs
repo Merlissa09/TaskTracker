@@ -3,7 +3,7 @@ namespace TaskDomain;
 //This class represents a recurring task so different from the actual interface
 public class RecurringTask : ITaskable
 {
-    private bool Iscomplete { get; set; }
+    private bool _isComplete;
     private string Title { get; }
     private string? Description { get; set; }
     private string? GetFrequency { get; }
@@ -31,12 +31,12 @@ public class RecurringTask : ITaskable
 
     public bool IsComplete()
     {
-        return Iscomplete;
+        return _isComplete;
     }
 
     public bool MarkComplete()
     {
-        Iscomplete = true;
-        return Iscomplete;
+        _isComplete = true;
+        return _isComplete;
     }
 }
