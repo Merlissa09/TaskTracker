@@ -6,13 +6,13 @@ public class RecurringTask : ITaskable
     private bool _isComplete;
     private string Title { get; }
     private string? Description { get; set; }
-    private string? GetFrequency { get; }
+    public string? Frequency { get; }
 
     public RecurringTask(string title, string? description = null, string? frequency = null)
     {
         Title = title;
         Description = description;
-        GetFrequency = frequency;
+        Frequency = frequency;
     }
 
     public string GetTitle()
