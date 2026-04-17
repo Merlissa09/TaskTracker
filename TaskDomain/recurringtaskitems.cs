@@ -4,11 +4,20 @@ namespace TaskDomain;
 public class RecurringTask : ITaskable
 {
     private bool Iscomplete { get; set; }
+    private string Title { get; }
     private string? Description { get; set; }
     private string? GetFrequency { get; }
+
+    public RecurringTask(string title, string? description = null, string? frequency = null)
+    {
+        Title = title;
+        Description = description;
+        GetFrequency = frequency;
+    }
+
     public string GetTitle()
     {
-        return "Title";
+        return Title;
     }
 
     public string GetDescription()
