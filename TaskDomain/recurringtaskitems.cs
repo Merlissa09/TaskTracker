@@ -22,11 +22,7 @@ public class RecurringTask : ITaskable
 
     public string GetDescription()
     {
-        if (Description is string)
-        {
-            return Description;
-        }
-        return string.Empty;
+        return Description ?? string.Empty;
     }
 
     public bool IsComplete()
