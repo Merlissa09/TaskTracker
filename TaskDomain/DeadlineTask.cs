@@ -51,6 +51,10 @@ public class DeadlineTask : ITaskable
         return _dueDate;
     }
 
+    public string GetSummary()
+    {
+        return $"[Deadline] {_title} — due {_dueDate}";
+    }
     public void PrintDeadlineTask()
     {
         Console.WriteLine($"Title: {_title}");
