@@ -32,17 +32,17 @@ public class RecurringTask : ITaskable
 
     public bool MarkComplete()
     {
-        if (_complete)
+        if (_isComplete)
         {
             return false;
         }
 
-        _complete = true;
+        _isComplete = true;
         return true;
     }
 
     public string GetSummary()
     {
-        return $"[Recurring] {_title} — {_frequency}";
+        return $"[Recurring] {Title} — {Frequency}";
     }
 }
