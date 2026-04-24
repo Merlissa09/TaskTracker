@@ -55,13 +55,12 @@ public class DeadlineTask : ITaskable
     {
         return $"[Deadline] {_title} — due {_dueDate}";
     }
-    public void PrintDeadlineTask()
+    public string PrintDeadlineTask()
     {
-        Console.WriteLine($"Title: {_title}");
-        Console.WriteLine($"Description: {_description}");
-        Console.WriteLine($"Due Date: {_dueDate}");
-        Console.WriteLine($"Is Complete: {_complete}");
-        
+        return $"Title: {_title}{Environment.NewLine}" +
+               $"Description: {_description}{Environment.NewLine}" +
+               $"Due Date: {_dueDate}{Environment.NewLine}" +
+               $"Is Complete: {_complete}";
     }
     
 }
