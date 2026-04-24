@@ -27,4 +27,8 @@ public interface ITaskable
     /// </summary>
     /// <returns>Whether the task was completed or not</returns>
     bool MarkComplete();
+    /// <summary>
+    /// <returns>A string that briefly describes the task for quick viewing</returns>
+    string GetSummary();
+}
 }

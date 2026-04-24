@@ -48,8 +48,18 @@ public class TaskItem : ITaskable
 
     public bool MarkComplete()
     {
-        _complete = true;
-        return true;
+    if (_complete)
+    {
+        return false;
+    }
+
+    _complete = true;
+    return true;
+    }
+    
+    public string GetSummary()
+    {
+    return $"[Task] {_title}";
     }
 
 }
