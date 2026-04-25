@@ -78,13 +78,10 @@ public class TaskItemListService
         }
     }
 
-    public void GetAllTasks()
+    public System.Collections.Generic.IReadOnlyList<TaskItem> GetAllTasks()
     {
-        //returns the full internal list of task items
-        foreach (var item in taskItems)
-        {
-            Console.WriteLine($"{item.Id}, {item.Title}");
-        }
+        // returns the full internal list of task items
+        return taskItems.AsReadOnly();
     }
     public void GetPendingTasks()
     {
