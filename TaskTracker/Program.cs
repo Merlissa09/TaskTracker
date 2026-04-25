@@ -5,10 +5,8 @@ using TaskTracker;
 
 var shouldContinue = true;
 
-List<TaskItem> taskItems = [new TaskItem("Grade midterms"), new TaskItem("Sew marker holder")];
-
 // this is a object representing our to do list
-TaskItemListService taskItemListService = new(taskItems);
+TaskItemListService taskItemListService = new();
 
 do
 {

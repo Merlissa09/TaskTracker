@@ -4,7 +4,7 @@ public class TaskItemListService
 {
     // instance variable - this belongs to a specific instance/object of this class
     // this is a todo list
-    List<TaskItem> taskItems = [];
+    List<ITaskable> taskItems = [];
 
     public TaskItemListService()
     {
@@ -12,28 +12,36 @@ public class TaskItemListService
     }
 
     /// <summary>
-    /// Overloaded constructor which allows for a List of TaskItem to be passed in
-    /// upon instantiation
+    /// Overloaded constructor which allows for a List of <see cref="ITaskable"/>
+    /// to be passed in upon instantiation. Using the interface type allows the
+    /// service to accept a heterogeneous collection (TaskItem, DeadlineTask,
+    /// RecurringTask, etc.) without depending on concrete types.
     /// </summary>
-    /// <param name="taskItems"> the passed in list of task item</param>
+    /// <param name="taskItems"> the passed in list of items implementing <see cref="ITaskable"/></param>
     /// <param name="append"> Optional. Defaults to true. Will first populate with
     /// items from PopulateInitialTaskItems and then append incoming taskItems to the end </param>
-    public TaskItemListService(List<TaskItem> taskItems, bool append = true)
+    public TaskItemListService(List<ITaskable> taskItems, bool append = true)
     {
         if (append)
         {
-            // create a initial list of task items
+            // create a initial list of task items (these are concrete TaskItem instances)
             PopulateInitialTaskItems();
-            // add our incoming task items to the end of the existing list
+            // add our incoming task items (might be different implementations of ITaskable)
+            // to the end of the existing list
             this.taskItems.AddRange(taskItems);
         }
         else
             // replace the existing taskItems with the incoming taskItems
+            // Note: we store the incoming collection typed as List<ITaskable> so callers
+            // can pass mixed concrete types without modification.
             this.taskItems = taskItems;
     }
 
     private void PopulateInitialTaskItems()
     {
+        // We construct concrete TaskItem instances here but store them in a
+        // List<ITaskable>. This demonstrates how the service uses the
+        // interface abstraction so it doesn't care about the concrete type.
         TaskItem taskOne = new("Clean the chicken coop");
         TaskItem taskTwo = new("Finish convert px to rem");
         TaskItem taskThree = new("Grade Week 3 Labs");
@@ -65,19 +73,19 @@ public class TaskItemListService
         // find the index of the id
         // delete the index
         // for a better ux should consider confirming the taskItem with the user before deleting
-        return taskItems.RemoveAll(taskItem => taskItem.Id == id);
+        return taskItems.RemoveAll(taskItem => taskItem.GetId() == id);
 
     }
 
-    public List<TaskItem> GetAllTasks()
+    public List<ITaskable> GetAllTasks()
     {
         // returns the full internal list of task items
         return [.. taskItems.AsReadOnly()];
     }
-    public List<TaskItem> GetPendingTasks()
+    public List<ITaskable> GetPendingTasks()
     {
         // returns only tasks where IsComplete() is false
-        List<TaskItem> pendingTasks = [];
+        List<ITaskable> pendingTasks = [];
 
         foreach (var item in taskItems)
         {
@@ -90,10 +98,10 @@ public class TaskItemListService
         return [.. pendingTasks.AsReadOnly()];
     }
 
-    public List<TaskItem> GetCompletedTasks()
+    public List<ITaskable> GetCompletedTasks()
     {
         // returns only tasks where IsComplete() is false
-        List<TaskItem> completedTasks = [];
+        List<ITaskable> completedTasks = [];
 
         foreach (var item in taskItems)
         {
