@@ -69,12 +69,40 @@ public class TaskItemListService
 
     }
 
-    // TODO: Move this into the UI layer - this is not the responsibility of the business logic layer
-    public void DisplayTaskItems()
+    public List<TaskItem> GetAllTasks()
     {
+        // returns the full internal list of task items
+        return [.. taskItems.AsReadOnly()];
+    }
+    public List<TaskItem> GetPendingTasks()
+    {
+        // returns only tasks where IsComplete() is false
+        List<TaskItem> pendingTasks = [];
+
         foreach (var item in taskItems)
         {
-            Console.WriteLine($"{item.Id}: {item.GetTitle()}");
+            if (!item.IsComplete())
+            {
+                pendingTasks.Add(item);
+            }
         }
+
+        return [.. pendingTasks.AsReadOnly()];
+    }
+
+    public List<TaskItem> GetCompletedTasks()
+    {
+        // returns only tasks where IsComplete() is false
+        List<TaskItem> completedTasks = [];
+
+        foreach (var item in taskItems)
+        {
+            if (item.IsComplete())
+            {
+                completedTasks.Add(item);
+            }
+        }
+
+        return [.. completedTasks.AsReadOnly()];
     }
 }
