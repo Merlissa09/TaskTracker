@@ -69,41 +69,40 @@ public class TaskItemListService
 
     }
 
-    // TODO: Move this into the UI layer - this is not the responsibility of the business logic layer
-    public void DisplayTaskItems()
-    {
-        foreach (var item in taskItems)
-        {
-            Console.WriteLine($"{item.Id}: {item.Title}");
-        }
-    }
-
-    public System.Collections.Generic.IReadOnlyList<TaskItem> GetAllTasks()
+    public List<TaskItem> GetAllTasks()
     {
         // returns the full internal list of task items
-        return taskItems.AsReadOnly();
+        return [.. taskItems.AsReadOnly()];
     }
-    public void GetPendingTasks()
+    public List<TaskItem> GetPendingTasks()
     {
-        //returns only tasks where isComplete() is false, 
-        //using a loop or stream
+        // returns only tasks where IsComplete() is false
+        List<TaskItem> pendingTasks = [];
+
         foreach (var item in taskItems)
         {
-            if (!item.IsComplete())
+            if (!item.IsComplete)
             {
-                Console.WriteLine($"{item.Id}: {item.Title}");
+                pendingTasks.Add(item);
             }
         }
+
+        return [.. pendingTasks.AsReadOnly()];
     }
-    public void GetCompletedTasks()
+
+    public List<TaskItem> GetCompletedTasks()
     {
-        //returns only tasks where isComplete() is true, using a loop or stream
+        // returns only tasks where IsComplete() is false
+        List<TaskItem> completedTasks = [];
+
         foreach (var item in taskItems)
         {
-            if (item.IsComplete())
+            if (item.IsComplete)
             {
-                Console.WriteLine($"{item.Id}: {item.Title}");
+                completedTasks.Add(item);
             }
         }
+
+        return [.. completedTasks.AsReadOnly()];
     }
 }
