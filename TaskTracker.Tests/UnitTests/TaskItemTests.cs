@@ -42,6 +42,6 @@ public class TaskItemTests
         var second = new TaskItem("Second");
 
         Assert.That(second.Id, Is.EqualTo(first.Id + 1));
-        Assert.That(second.Id, Is.GreaterThan(first.Id));
+
     }
 }
