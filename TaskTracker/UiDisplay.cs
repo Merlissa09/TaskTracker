@@ -22,7 +22,7 @@ public static class UiDisplay
     {
         foreach (var item in taskItems)
         {
-            Console.WriteLine($"{item.Id}: {item.Title}");
+            Console.WriteLine($"{item.Id}: {item.GetTitle()}");
         }
     }
 }

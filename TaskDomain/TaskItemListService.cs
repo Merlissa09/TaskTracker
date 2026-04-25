@@ -81,7 +81,7 @@ public class TaskItemListService
 
         foreach (var item in taskItems)
         {
-            if (!item.IsComplete)
+            if (!item.IsComplete())
             {
                 pendingTasks.Add(item);
             }
@@ -97,7 +97,7 @@ public class TaskItemListService
 
         foreach (var item in taskItems)
         {
-            if (item.IsComplete)
+            if (item.IsComplete())
             {
                 completedTasks.Add(item);
             }

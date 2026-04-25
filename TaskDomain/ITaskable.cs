@@ -31,4 +31,3 @@ public interface ITaskable
     /// <returns>A string that briefly describes the task for quick viewing</returns>
     string GetSummary();
 }
-}
