@@ -81,9 +81,9 @@ public class TaskItemListService
     public void GetAllTasks()
     {
         //returns the full internal list of task items
-        foreach (var item in taskitems)
+        foreach (var item in taskItems)
         {
-            Console.WriteLine($"{item.ID}, {item.Title}");
+            Console.WriteLine($"{item.Id}, {item.Title}");
         }
     }
     public void GetPendingTasks()
