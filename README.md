@@ -40,9 +40,23 @@ The application will start and display the local URL (typically `http://localhos
 ## Project Structure
 
 - `TaskTracker/` - Main application project
-- `Domain/` - Domain models and entities
+- `TaskDomain/` - Domain models and entities
+- `TaskTracker.Tests/` - Test project with a test guide ([TaskTracker.Tests/README.md](TaskTracker.Tests/README.md))
 - `README.md` - This file
 - `LICENSE` - License information
+
+## Testing
+
+The repository includes a test project located at `TaskTracker.Tests/`. The tests use NUnit.
+
+- See the test guide/instructions here: [TaskTracker.Tests/README.md](TaskTracker.Tests/README.md)
+- Run all tests from the repository root with:
+
+```bash
+dotnet test TaskTracker.Tests/TaskTracker.Tests.csproj
+```
+
+If you're new to unit testing, the tests README explains naming conventions, style guidelines, and troubleshooting tips.
 
 ## Contributing
 
