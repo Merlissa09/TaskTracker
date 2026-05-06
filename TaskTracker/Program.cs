@@ -52,4 +52,34 @@ do
             break;
     }
     // make it so that the pro
-} while (shouldContinue);
+} while (shouldContinue); string answer = Console.ReadLine();
+if (answer == "1") // only when list tasks is selected
+{
+    Console.WriteLine("How would you like to view the tasks");
+    Console.WriteLine("1. Default Sort");
+    Console.WriteLine("2. Alphabetical Sort");
+    Console.WriteLine("3. Completion Sort");
+    string sortChoice = Console.ReadLine();
+    List<TaskItem> tasks;
+    if (sortChoice == "1")
+    {
+        tasks = taskItemListService.GetAllTasks();
+    }
+    else if (sortChoice == "2")
+    {
+        TaskSorter sorter = new AlphabeticalTaskSorter();
+         tasks = sorter.Sort(taskItemListService.GetAllTasks());
+    }
+    else if (sortChoice == "3")
+    {
+        TaskSorter sorter = new CompletionSorter();
+        tasks = sorter.Sort(taskItemListService.GetAllTasks());
+    }
+    else
+    {
+        Console.WriteLine("Invalid sort choice, displaying default sort");
+        tasks = taskItemListService.GetAllTasks();
+    }
+
+
+}
