@@ -24,8 +24,9 @@ public class TaskItemListService
         {
             // create a initial list of task items
             PopulateInitialTaskItems();
-            // add our incoming task items to the end of the existing list
+            // add to the end of the existing list
             this.taskItems.AddRange(taskItems);
+            // this is a comment
         }
         else
             // replace the existing taskItems with the incoming taskItems

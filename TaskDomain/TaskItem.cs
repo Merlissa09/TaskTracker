@@ -14,6 +14,7 @@ public class TaskItem : ITaskable
     }
 
     // static property
+    // this is another comment in a different area
     // static properties belong to the class itself - they are shared between objects
     private static int _totalCount = 0;
 
@@ -48,18 +49,18 @@ public class TaskItem : ITaskable
 
     public bool MarkComplete()
     {
-    if (_complete)
-    {
-        return false;
+        if (_complete)
+        {
+            return false;
+        }
+
+        _complete = true;
+        return true;
     }
 
-    _complete = true;
-    return true;
-    }
-    
     public string GetSummary()
     {
-    return $"[Task] {_title}";
+        return $"[Task] {_title}";
     }
 
 }
