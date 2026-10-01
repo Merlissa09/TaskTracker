@@ -5,10 +5,8 @@ using TaskTracker;
 
 var shouldContinue = true;
 
-List<TaskItem> taskItems = [new TaskItem("Grade midterms"), new TaskItem("Sew marker holder")];
-
 // this is a object representing our to do list
-TaskItemListService taskItemListService = new(taskItems);
+TaskItemListService taskItemListService = new();
 
 do
 {
@@ -27,7 +25,7 @@ do
     switch (input)
     {
         case (int)MainMenu.ListTasks:
-            taskItemListService.DisplayTaskItems();
+            UiDisplay.DisplayTaskItems(taskItemListService.GetAllTasks());
             break;
         case (int)MainMenu.AddTask:
 
@@ -55,10 +53,3 @@ do
     }
     // make it so that the pro
 } while (shouldContinue);
-
-void AboutMeInformation()
-{
-    Console.WriteLine("My name is Melissa Hegney");
-    Console.WriteLine("My GitHub name is Merlissa09");
-    Console.WriteLine();
-}
