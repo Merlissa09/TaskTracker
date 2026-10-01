@@ -21,6 +21,19 @@ public class TaskItem : TaskId, ITaskable
         _title = title;
     }
 
+    // static property
+    // this is another comment in a different area
+    // static properties belong to the class itself - they are shared between objects
+    private static int _totalCount = 0;
+
+    public static int TotalCount
+    {
+        get => _totalCount;
+    }
+
+    // Instance properties
+    // Instance properties belong to the object
+    public int Id { get; }
     private readonly string _title = string.Empty;
     private string _description = string.Empty;
     private bool _complete = false;
